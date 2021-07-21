@@ -118,4 +118,184 @@ sudo apt install synapse
 
 ![](./img/SynapseSeting-2.png)
 
+## シェル美化prj
 
+### zsh
+
+- インストール
+  ```
+  sudo apt install zsh
+  ```
+
+- デフォルトシェルをzshにする
+  ```shell
+  chsh
+  ```
+  パスワードが聞かれるので、入力してリターン。
+
+  ログインシェルを`/usr/bin/zsh`に設定する。
+
+- システムを再起動
+  ```shell
+  sudo reboot
+  ```
+
+シェルを再起動すると、zshが起動するようになる。
+
+初回起動時に以下のようなメッセージが表示されるので、
+
+![](./img/zsh-1.png)
+
+とりあえず「２」を押しておすすめの設定を生成させる。
+
+### Nerd font
+
+- firamonoのNerd fontをダウンロード
+  
+  `https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraMono/Regular`から`complete`フォルダにあるフォントファイルをダウンロードする。
+
+- ダウンロードしたファイルをフォントのフォルダにコピー
+  
+  ```shell
+  mkdir -p ~/.fonts/furacode
+  cd ~/Downloads/
+  mv *.otf ~/.fonts/furacode/.
+
+  ```
+
+- フォントのキャッシュを更新
+  ```shell
+  fc-cache
+  ```
+- LXterminalのフォントをNerd Fontに設定する。
+  
+  ![](./img/LXTerminal-font.png)
+
+
+### zシェルプラグインマネージャー[zplug](https://github.com/zplug/zplug)
+
+- zplugをインストール
+  ```shell
+  export ZPLUG_HOME=~/.zplug
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+  ```
+- `.zshrc`を編集
+  ```bash
+  # zplug settings
+  export ZPLUG_HOME=~/.zplug
+  # git clone https://github.com/zplug/zplug $ZPLUG_HOME
+  source $ZPLUG_HOME/init.zsh
+
+  # cdを強化する
+  # https://github.com/b4b4r07/enhancd
+  zplug "b4b4r07/enhancd", use:init.sh
+
+  # Vanilla shell
+  zplug "yous/vanilli.sh"
+
+  # 補完の強化
+  zplug "zsh-users/zsh-completions"
+
+  # 履歴補完の強化
+  zplug "zsh-users/zsh-autosuggestions"
+
+  # タスクを非同期で実行できるようにする
+  zplug "mafredri/zsh-async", from:github
+
+  # テーマ
+  zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs) # 2行表示
+    plugins=(virtualenv)
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv) # 右側にPython仮想環境
+    # ターミナルのフォントをnerd-fontに設定してから、下の行を追加
+    POWERLEVEL9K_MODE='nerdfont-complete'
+
+  # コマンドをハイライトしてくれる
+  zplug "zsh-users/zsh-syntax-highlighting"
+
+  # Install plugins if there are plugins that have not been installed
+  if ! zplug check --verbose; then
+      printf "Install? [y/N]: "
+      if read -q; then
+          echo; zplug install
+      fi
+  fi
+
+  # Then, source plugins and add commands to $PATH
+  zplug load # --verbose
+
+
+  #####################################################
+  ################# ここから下はzshの設定 ################
+  #####################################################
+
+  # 入力した文字から始まるコマンドを履歴から検索し、上下矢印で補完
+  # 鍵盤コードは`bat /etc/zshrc`で確認
+  autoload -U up-line-or-beginning-search
+  autoload -U down-line-or-beginning-search
+  zle -N up-line-or-beginning-search
+  zle -N down-line-or-beginning-search
+  bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
+  bindkey "$terminfo[kcud1]" down-line-or-beginning-search
+
+  # Beep音をなくす
+  setopt no_beep
+
+  # 履歴関連設定
+  setopt share_history # 他のzshと履歴を共有
+  setopt hist_ignore_all_dups # 同じコマンドをヒストリに保存しない
+  setopt hist_reduce_blanks # 無駄なスペースを消してヒストリに保存する
+
+  # 選択されたテキストの背景色を変更し、ハイライトする
+  zstyle ':completion:*:default' menu select=2
+
+  # パスを直接入力してもcdする
+  setopt AUTO_CD
+
+  # 環境変数を補完
+  setopt AUTO_PARAM_KEYS
+
+  # Add color to ls command
+  export CLICOLOR=1
+
+  export LANG=ja_JP.UTF-8
+  export LC_ALL='ja_JP.UTF-8'
+
+  alias ...="cd ../../"
+  alias cls="clear"
+  alias gpl="git pull"
+  alias pull="git pull"
+  alias gps="git push"
+  alias push="git push"
+  alias gst="git status"
+  alias gs="git status -s -b -u"
+  alias status="git status"
+  alias gco="git commit"
+  alias commit="git commit"
+  alias add="git add"
+  ```
+### `ls`よりちょっと美しい[exa](https://github.com/ogham/exa)をインストール
+
+- `exa`をインストール
+  
+  IntelやAMD、Arm64のマシンでは`lsd`を使っているが、Raspberry Piで簡単にインストールできなかったので、代わりに[exa](https://github.com/ogham/exa)を使うようにする。
+
+  ```shell
+  sudo apt install exa
+  ```
+
+  `ls`との比較：
+
+  ![](./img/ls-vs-exa.png)
+
+- ls の alias を設定
+  ~/.zshrc に以下の内容を追加して、`source ~/.zshrc`で適用する。
+  ```bash
+  # sudo apt install exa
+  alias ls=exa
+  alias la="exa -a"
+  alias ll="exa -algh --time-style iso"
+  alias lt="exa -alghT -I .git --time-style iso"
+  alias lg="exa -algh --git --time-style iso"
+  alias ltg="exa -alghT --git -I .git --time-style iso"
+  ```
