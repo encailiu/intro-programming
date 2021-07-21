@@ -97,3 +97,25 @@ sudo apt install tuxtype
   ![](./img/SonicPi-menu.png)
 - 上記「Sonic Pi」をクリックすると、アプリケーションが起動される。
   ![](./img/SonicPiStartup.png)
+
+## アプリランチャー - Synapse
+
+シェルで以下のコマンドを実行：
+```shell
+sudo apt update
+sudo apt install synapse
+```
+インストールが終わったら、メニューの「アクセサリ」の中に「Synapse」がインストールされる。
+
+![](./img/SynapseMenu.png)
+
+それを起動すると、タスクバーの右側に「Synapse」のアイコンが表示される。
+そのアイコン上でマウスを右クリックして設定を選ぶ。
+
+![](./img/SynapseSeting-1.png)
+
+「ログイン時に起動する」をチェックして、「閉じる」を押す。
+
+![](./img/SynapseSeting-2.png)
+
+
