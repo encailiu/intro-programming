@@ -118,6 +118,15 @@ sudo apt install synapse
 
 ![](./img/SynapseSeting-2.png)
 
+## ブラウザ - firefox
+
+```shell
+sudo apt install firefox-esr 
+```
+実行完了すると、メニューの「インターネット」のところに「Firefox ESR」がインストールされる。
+
+![](./img/firefoxMenu.png)
+
 ## シェル美化prj
 
 ### zsh
