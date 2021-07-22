@@ -13,16 +13,27 @@ Raspberry Piではおすすめソフトをインストールするためのツ�
 
 ![](./img/install-Scratch3.png)
 
+インストールが終わると、メニューの「プログラミング」のところに、「Scratch3」がインストールされる。
+
+![](./img/Scratch3Menu.png)
+
 ## ワープロ ➖ LibreOffice
 
 Scratch 3と同様にインストールする。
 
 ![](./img/install-libreoffice.png)
 
+インストールが終わると、メニューの「オフィス」のところに、LibreOfficeのアプリケーションがインストールされる。
+
+![](./img/LibreOffieceMenu.png)
+
 ## プログラミング ➖ Visual Studio Code
 
 ![](./img/install-vscode.png)
 
+インストールが終わると、メニューの「プログラミング」のところに、「Visual Studio Code」がインストールされる。
+
+![](./img/VSCodeMenu.png)
 
 ## スクリーンショット ➖ Shutter
 
