@@ -16,6 +16,7 @@ Raspberry Piではおすすめソフトをインストールするためのツ�
 ## ワープロ ➖ LibreOffice
 
 Scratch 3と同様にインストールする。
+
 ![](./img/install-libreoffice.png)
 
 ## プログラミング ➖ Visual Studio Code
