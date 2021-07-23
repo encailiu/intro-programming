@@ -10,7 +10,8 @@
 
 - 2021.07.22
   - ソフトウェアをインストール
-    [参考資料](./imsg/../raspi/install-software-to-raspi.md)
+  
+    [参考資料](./raspi/install-software-to-raspi.md)
 
     Scratch3、LibreOffice、Sonic Pi、tuxtype
 
