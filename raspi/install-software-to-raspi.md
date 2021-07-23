@@ -110,6 +110,28 @@ sudo apt install tuxtype
 - 上記「Sonic Pi」をクリックすると、アプリケーションが起動される。
   ![](./img/SonicPiStartup.png)
 
+## xdg-utils
+
+```shell
+sudo apt install xdg-utils
+```
+
+インストールし終わったら、`~/.zshrc` に alias を追加しておく。
+
+```shell
+alias open=xdg-open
+alias e.="xdg-open ."
+```
+
+これで、ターミナルから以下の alias が使えるようになる。
+- `open filename`
+
+  関連付けされているアプリでファイルを開く
+
+- `e.`
+  ファイルマネージャでカレントディレクトリを開く
+
+
 ## アプリランチャー - Synapse
 
 シェルで以下のコマンドを実行：
