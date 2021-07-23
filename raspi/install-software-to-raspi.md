@@ -320,3 +320,86 @@ sudo apt install firefox-esr
   alias lg="exa -algh --git --time-style iso"
   alias ltg="exa -alghT --git -I .git --time-style iso"
   ```
+
+### peco
+
+- peco をインストール
+  
+  ```shell
+  sudo apt install peco
+  ```
+
+- pecoによる過去コマンドの検索
+  
+  `~/.zshrc` に以下を追加
+  ```shell
+  function peco_select_history() {
+    local tac
+    if which tac > /dev/null; then
+      tac="tac"
+    else
+      tac="tail -r"
+    fi
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+  }
+  zle -N peco_select_history
+  bindkey "^R" peco_select_history
+  ```
+
+  これで、ターミナルで「Ctrl + R」を押して、過去のコマンドを検索できるようになる。
+
+  ![](./img/Peco-Ctrl-R.png)
+
+### gitリポジトリ管理 - ghq
+
+- go言語をインストールする
+  
+  ```shell
+  sudo snap install go
+  ```
+- ghq をインストール
+  
+  ```shell
+  go get github.com/x-motemen/ghq
+  ```
+
+  インストールが終わったら、`~/.zshrc`にPATHを追加する。
+
+  ```shell
+  export PATH="$PATH:$HOME/go/bin"
+  ```
+
+  追加したら、ターミナルで`source ~/.zshrc`を実行して反映させる。
+
+  ```shell
+  $ ghq --version
+  ghq version 1.2.1 (rev:HEAD)
+  ```
+
+- `~/.zshrc`に設定を追加
+  ```shell
+  function peco-src () {
+    local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+      BUFFER="cd ${selected_dir}"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N peco-src
+  bindkey "^G" peco-src
+  ```
+
+- ghq と peco による git リポジトリ管理
+  
+  gitリポジトリを取得：￥するには、
+
+  ```shell
+  ghq get $url
+  ```
+
+  git リポジトリのフォルダに移動するには、ターミナルで「Ctrl + G」を押して、該当リポジトリ選んで「Enter」を押す。
+  ![](./img/Peco-ghq-Ctrl-G.png)
+
