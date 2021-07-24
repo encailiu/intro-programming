@@ -35,3 +35,19 @@ sudo nano /etc/sudoers.d/010_pi-nopasswd
 ![](./img/pi-nopassword-2.png)
 
 「Y」 => 「Enter」の順でキーボードを押して設定を保存する。
+
+## 「Caps Lock」キーを Ctrl キーにする
+
+ターミナルで以下のコマンドを実行して、
+
+```shell
+sudo nano /etc/default/keyboard
+```
+
+キーボードオプションに以下のようにを追加する。
+
+![](./img/keyboard-opt-caps2ctrl.png)
+
+編集が終わったら、「Ctrl + X」で終了。保存しますかと聞かれたら「Y」を押す。
+
+その後はRaspberry Piをrebootする。
