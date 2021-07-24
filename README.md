@@ -1,6 +1,38 @@
 # intro-programming
 
-子供たちにプログラミングを教えるための資料を集めたり、記録を残したりためのリポジトリ
+子供にプログラミングを教えるためのリポジトリ
+
+## 環境
+
+Raspberry Pi 4 Model B 4GB
+
+- モデル
+  ```shell
+  $ cat /proc/device-tree/model
+  Raspberry Pi 4 Model B Rev 1.4
+  ```
+
+- OS
+  
+  Raspberry Pi OS with desktop 32 bit
+
+  ```shell
+  $ lsb_release -a
+  No LSB modules are available.
+  Distributor ID:	Raspbian
+  Description:	Raspbian GNU/Linux 10 (buster)
+  Release:	10
+  Codename:	buster
+  ```
+  
+- カーネル
+  ```shell
+  $ uname -a
+  Linux raspberrypi 5.10.17-v7l+ #1421 SMP Thu May 27 14:00:13 BST 2021 armv7l GNU/Linux
+  ```
+
+  
+## 記録
 
 - 2021.07.18
 
