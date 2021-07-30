@@ -55,3 +55,9 @@ Raspberry Pi 4 Model B 4GB
 
 - 2021.07.xx (予定)
   - Scratch3 1回目
+    
+    素材はあの有名な(？)ねこ歩き。
+
+    [参考資料](./raspi/scratch3-intro.md)
+
+
