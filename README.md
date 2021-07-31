@@ -53,11 +53,17 @@ Raspberry Pi 4 Model B 4GB
 
       `ls`、`cd`、`pwd`、`sudo`、`apt`等
 
-- 2021.07.xx (予定)
+- 2021.07.31
   - Scratch3 1回目
     
     素材はあの有名な(？)ねこ歩き。
 
     [参考資料](./raspi/scratch3-intro.md)
+    
+    ※ 少し簡単過ぎたようだ。
+
+  - 数当てゲーム
+
+    ２分法の話
 
 
