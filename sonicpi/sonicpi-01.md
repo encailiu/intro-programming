@@ -1,4 +1,4 @@
-# Sonic Piでライブコーディング
+# Sonic Piでライブコーディング -- 1回目
 
 Sonic Pi１回目の目標
 
