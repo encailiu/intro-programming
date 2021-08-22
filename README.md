@@ -13,7 +13,7 @@ Raspberry Pi 4 Model B 4GB
   ```
 
 - OS
-  
+
   Raspberry Pi OS with desktop 32 bit
 
   ```shell
@@ -24,14 +24,14 @@ Raspberry Pi 4 Model B 4GB
   Release:	10
   Codename:	buster
   ```
-  
+
 - カーネル
   ```shell
   $ uname -a
   Linux raspberrypi 5.10.17-v7l+ #1421 SMP Thu May 27 14:00:13 BST 2021 armv7l GNU/Linux
   ```
 
-  
+
 ## 記録
 
 - 2021.07.18
@@ -42,7 +42,7 @@ Raspberry Pi 4 Model B 4GB
 
 - 2021.07.22
   - ソフトウェアをインストール
-  
+
     [参考資料](./raspi/install-software-to-raspi.md)
 
     Scratch3、LibreOffice、Sonic Pi、tuxtype
@@ -54,16 +54,32 @@ Raspberry Pi 4 Model B 4GB
       `ls`、`cd`、`pwd`、`sudo`、`apt`等
 
 - 2021.07.31
-  - Scratch3 1回目
-    
+  - Scratch 1回目
+
     素材はあの有名な(？)ねこ歩き。
 
-    [参考資料](./raspi/scratch3-intro.md)
-    
+    [資料](./raspi/scratch3-intro.md)
+
     ※ 少し簡単過ぎたようだ。
 
   - 数当てゲーム
 
     ２分法の話
 
+- 2021.08.14
+  - Scratch 2回目
 
+    codedojo参加 ---- [プログラミングでポケモンをうごかしてみよう](https://coderdojo-hamamatsu.connpass.com/event/218934/)
+
+- 2021.08.22
+  - Sonic Pi 1回目
+
+    [資料](./sonicpi/sonicpi-01.md)
+    - `play`で音符再生
+    - `sleep`でリズムをつける
+    - `use_bpm`でテンポを変える
+    - 繰り返す
+
+    参考：
+
+    [Music Programming Basics](https://mehackit.org/en/courses/music_programming_basics/)
