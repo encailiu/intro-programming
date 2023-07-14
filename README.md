@@ -72,7 +72,7 @@ Raspberry Pi 4 Model B 4GB
     codedojo参加 ---- [プログラミングでポケモンをうごかしてみよう](https://coderdojo-hamamatsu.connpass.com/event/218934/)
 
 - 2021.08.22
-  - Sonic Pi 1回目
+  - Sonic Pi
 
     [資料](./sonicpi/sonicpi-01.md)
     - `play`で音符再生
