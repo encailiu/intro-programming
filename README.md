@@ -58,7 +58,7 @@ Raspberry Pi 4 Model B 4GB
 
     素材はあの有名な(？)ねこ歩き。
 
-    [資料](./raspi/scratch3-intro.md)
+    [資料](./scratch/scratch3-intro.md)
 
     ※ 少し簡単過ぎたようだ。
 
